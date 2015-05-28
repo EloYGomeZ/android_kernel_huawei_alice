@@ -1,0 +1,24 @@
+
+/**
+ * Huawei Ltd.
+ * PhosphorV660
+ */
+
+
+/include/ "fastboot.dtsi"
+/include/ "DAVINCE_703L_01_config.dtsi"
+/include/ "DAVINCE_703L_02_pin.dtsi"
+/include/ "DAVINCE_703L_02_hi6402_pin.dtsi"
+/include/ "DAVINCE_703L_02_modem_pin.dtsi"
+///include/ "DAVINCE_703L_02_charger.dtsi"
+///include/ "DAVINCE_703L_02_pmic.dtsi"
+///include/ "DAVINCE_703L_02_gpio_logic.dtsi"
+
+/ {
+	hisi,boardid = <1 1 1 6 >;
+	hisi,boardname = "DAVINCE_703L_02";
+	hisi,modem_id = <0x3EF54880>;
+	hisi,hardware_version="STENDAV703LAPV0002";
+
+};
+

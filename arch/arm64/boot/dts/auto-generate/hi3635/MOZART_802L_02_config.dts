@@ -1,0 +1,25 @@
+
+/**
+ * Huawei Ltd.
+ * PhosphorV660
+ */
+
+/dts-v1/;
+
+/include/ "fastboot.dtsi"
+/include/ "MOZART_801L_02_config.dtsi"
+/include/ "MOZART_802L_02_pin.dtsi"
+/include/ "MOZART_802L_02_hi6402_pin.dtsi"
+/include/ "MOZART_802L_02_modem_pin.dtsi"
+///include/ "MOZART_802L_02_charger.dtsi"
+///include/ "MOZART_802L_02_pmic.dtsi"
+///include/ "MOZART_802L_02_gpio_logic.dtsi"
+
+/ {
+	hisi,boardid = <1 1 3 4 >;
+	hisi,boardname = "MOZART_802L_02";
+	hisi,modem_id = <0x3EB05880>;
+	hisi,hardware_version="STENM2802LAPV0002";
+
+};
+

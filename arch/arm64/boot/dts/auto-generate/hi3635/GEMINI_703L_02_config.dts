@@ -1,0 +1,109 @@
+
+/**
+ * Huawei Ltd.
+ * PhosphorV660
+ */
+
+/dts-v1/;
+
+/include/ "fastboot.dtsi"
+/include/ "GEMINI_703L_01_config.dtsi"
+/include/ "GEMINI_703L_02_pin.dtsi"
+/include/ "GEMINI_703L_02_hi6402_pin.dtsi"
+/include/ "GEMINI_703L_02_modem_pin.dtsi"
+///include/ "GEMINI_703L_02_charger.dtsi"
+///include/ "GEMINI_703L_02_pmic.dtsi"
+///include/ "GEMINI_703L_02_gpio_logic.dtsi"
+
+/ {
+	hisi,boardid = <1 1 0 1 >;
+	hisi,boardname = "GEMINI_703L_02";
+	hisi,modem_id = <0x3EF52880>;
+	hisi,hardware_version="STENGEM703LAPV0002";
+
+	hi6402es_irq: hi6402es_irq@e82b9000 {
+		status = "disabled";
+		hi6402es_codec: hi6402es_codec@0{
+			status = "disabled";
+		};
+
+		hi6402es_mbhc: hi6402es_mbhc@0{
+			status = "disabled";
+		};
+
+		hi6402es_dsp: hi6402es_dsp@0{
+			status = "disabled";
+		};
+
+		gpioes28: gpioes@0{
+			status = "disabled";
+		};
+
+		gpioes29: gpioes@1{
+			status = "disabled";
+		};
+
+		gpioes30: gpioes@2{
+			status = "disabled";
+		};
+
+		gpioes31: gpioes@3{
+			status = "disabled";
+		};
+
+		pmxes4: hi6402es_pinctrl {
+			status = "disabled";
+		};
+	};
+
+	hi6402_irq: hi6402_irq@e82b9000 {
+		status = "ok";
+		hi6402_codec: hi6402_codec@0{
+			status = "ok";
+		};
+
+		hi6402_mbhc: hi6402_mbhc@0{
+			status = "ok";
+		};
+
+		hi6402_dsp: hi6402_dsp@0{
+			status = "ok";
+		};
+
+		gpio28: gpio@0{
+			status = "ok";
+		};
+
+		gpio29: gpio@1{
+			status = "ok";
+		};
+
+		gpio30: gpio@2{
+			status = "ok";
+		};
+
+		gpio31: gpio@3{
+			status = "ok";
+		};
+
+		pmx4: hi6402_pinctrl {
+			status = "ok";
+		};
+	};
+
+	sound {
+		compatible = "hisilicon,hi3630-hi6402";
+		status = "ok";
+	};
+	//new tp
+	sensorhub{
+		ps_sensor:proximity{
+			ps1{
+				pwave_value=<30>;
+				pwindows_value=<110>;
+				threshold_value=<50>;
+			};
+		};
+	};
+};
+

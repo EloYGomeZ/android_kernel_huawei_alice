@@ -1,0 +1,45 @@
+
+/**
+ * Huawei Ltd.
+ * PhosphorV660
+ */
+
+/dts-v1/;
+
+/include/ "fastboot.dtsi"
+/include/ "DAVINCE_703L_01_config.dtsi"
+/include/ "DAVINCE_701L_01_pin.dtsi"
+/include/ "DAVINCE_701L_01_hi6402_pin.dtsi"
+/include/ "DAVINCE_701L_01_modem_pin.dtsi"
+///include/ "DAVINCE_701L_01_charger.dtsi"
+///include/ "DAVINCE_701L_01_pmic.dtsi"
+///include/ "DAVINCE_701L_01_gpio_logic.dtsi"
+
+/ {
+	hisi,boardid = <1 1 2 8 >;
+	hisi,boardname = "DAVINCE_701L_01";
+	hisi,modem_id = <0x3EB55880>;
+	hisi,hardware_version="STENDAV701LAPV0001";
+
+	sensorhub{
+		cap_prox_sensor:cap_prox{
+			cap_prox1{
+				compatible="huawei,adi-adux1050";
+				bus_number=<0>;
+				reg=<0x2c>;
+				chip_id_register=<0x0>;
+				chip_id_value=<0xa0 0x50>;
+				chip_reg_bit16=<1>;
+				file_id=<0x19>;
+				sensor_type="cap_prox";
+				sensor_list_info_id=<0x11>;
+				sensor-vdd-supply = <&ldo24>;
+				init_reg_val = <0x00010005 0x00020529 0x000300cc 0x00040001 0x00050f55 0x00069d42 0x000700e8 0x00080200 0x00098100 0x000a000c 0x00798000 0x000b9d18 0x000c00e8 0x000d0200 0x000e3100 0x000f000c 0x007a8000>;
+				poll_interval=<100>;
+				gpio_int=<&gpio22 6 0>; // GPIO182
+				status = "ok";
+			};
+		};
+	};
+};
+
